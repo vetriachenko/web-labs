@@ -1,0 +1,397 @@
+@import "./variables";
+@import "./teacher-card";
+@import "./add-teacher-form";
+@import "./modal";
+@import "./form";
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+}
+
+.main {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header"
+    "nav"
+    "top-teachers"
+    "statistics"
+    "favorites"
+    "footer";
+  grid-row-gap: 40px;
+  font-family: "PT Sans", serif;
+}
+
+.container {
+  width: 100%;
+  padding: 0 calc((100vw - 1200px) / 2);
+}
+
+.flex {
+  display: flex;
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inline-fieldset {
+  flex-direction: row;
+}
+
+.label {
+  color: rgb(91, 91, 91);
+  align-self: center;
+
+  &:hover {
+    color: rgb(34, 34, 34);
+  }
+}
+
+.thin-input {
+  padding: 5px;
+}
+
+.text-input {
+  padding: 10px;
+}
+
+.separator {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  & hr {
+    width: 70%;
+    height: 1px;
+    border-color: #222;
+    margin: 0;
+  }
+}
+
+.v-separator {
+  border-left: 2px dotted rgb(153, 153, 153);
+}
+
+#teachers {
+  grid-area: top-teachers;
+}
+
+.teachers-list {
+  display: flex;
+  flex-direction: row;
+  column-gap: 50px;
+  row-gap: 40px;
+  flex-wrap: wrap;
+  height: auto;
+  width: auto;
+}
+
+.teachers__filters-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  gap: 20px;
+}
+
+.favorite-teachers {
+  justify-content: center;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  &.navbar-top {
+    grid-area: nav;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+  }
+
+  &__element {
+    color: $main-color;
+    font-size: $base-font-size;
+    font-weight: $title-font-weight;
+    text-decoration: none;
+
+    &:hover {
+      color: $hover-color;
+      cursor: pointer;
+    }
+  }
+
+  &__btn {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+
+  &__title {
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 36px;
+    color: white;
+    text-shadow: -1px -1px rgb(255, 122, 122), 2px 1px black;
+    letter-spacing: 1px;
+    margin: 0;
+
+    &:hover {
+      color: #F1ECF0;
+      text-shadow: -2px -1px rgb(255, 122, 122), 3px 1px black;
+    }
+  }
+
+  &__search-bar {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+
+    &__search-input {
+      padding: 15px 23px;
+    }
+
+    .text-input {
+      transition: width 0.5s ease;
+
+      &:hover {
+        width: 300px;
+      }
+    }
+  }
+}
+
+.footer {
+  grid-area: footer;
+  padding-bottom: 40px;
+
+  .navbar {
+    padding-top: 35px;
+  }
+
+  &__text {
+    text-align: left;
+    font-family: $base-font;
+    font-size: 14px;
+    font-weight: $base-font-weight;
+    margin-top: 14px;
+  }
+}
+
+.paging {
+  text-align: left;
+  margin-top: 36px;
+
+  &__button {
+    color: #1a9cb0;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    &:hover {
+      text-decoration: #1096d0 underline;
+      cursor: pointer;
+      color: #1096d0;
+    }
+  }
+}
+
+#statistics {
+  grid-area: statistics;
+}
+
+#favorites {
+  grid-area: favorites;
+}
+
+$table-border-color: #222;
+
+.stats-table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+
+  &__header {
+    border-bottom: 1px $table-border-color solid;
+
+    &-icon {
+      visibility: hidden;
+    }
+
+    &:hover {
+      box-sizing: border-box;
+      border-bottom: 5px $table-border-color solid;
+      cursor: pointer;
+
+      .stats-table__header-icon {
+        visibility: visible;
+      }
+    }
+  }
+
+  & th {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  & td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  & tr:nth-child(even) {
+    background-color: #f9f5f9;
+  }
+}
+
+.btn {
+  border: 1px $main-color solid;
+  color: $main-color;
+  background-color: $accent-color;
+  font-size: $base-font-size;
+  font-weight: $title-font-weight;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  vertical-align: center;
+
+  &:hover {
+    color: $accent-color;
+    background-color: $main-color;
+    cursor: pointer;
+  }
+}
+
+.small-btn {
+  font-size: 16px;
+  padding: 10px 23px;
+}
+
+.title {
+  font-size: $title-font-size;
+  font-weight: $title-font-weight;
+  font-family: $title-font, serif;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 48px;
+  margin-top: 40px;
+}
+
+.teacher-compact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: $base-font-size;
+  row-gap: 10px;
+  position: relative;
+
+  &__name {
+    font-size: inherit;
+    font-weight: $title-font-weight;
+  }
+
+  &__nationality {
+    font-size: 12px;
+  }
+
+  &__specialty {
+    font-size: 14px;
+    color: #888897;
+  }
+
+  &--favorite::after {
+    content: "⭐️";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+.teacher-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px $main-color solid;
+  border-radius: 100%;
+  padding: 0;
+  width: 7em;
+  height: 7em;
+  font-size: inherit;
+  overflow: hidden;
+  transition: 0.25s;
+  margin: 8px;
+
+  &:hover {
+    border-color: $hover-color;
+    cursor: pointer;
+  }
+
+  &__img {
+    transition: 0.5s ease-in-out;
+    object-fit: contain;
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: inherit;
+    padding: 0;
+
+    &:hover {
+      transform: scale(1.25);
+      transform-origin: 50%;
+    }
+  }
+
+  &__placeholder {
+    font-weight: $title-font-weight;
+    color: $main-color;
+    font-size: 24px;
+    font-family: $title-font, serif;
+    text-align: center;
+    height: fit-content;
+    width: fit-content;
+    transition: 0.5s ease-in-out;
+    border-radius: inherit;
+
+    &:hover {
+      transform: scale(1.25);
+      color: $hover-color;
+    }
+  }
+}
+
+.favorite-teacher {
+  position: static;
+  width: 100%;
+  display: block;
+  text-align: end;
+  z-index: 1;
+  color: yellow;
+  font-size: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100vw;
+    padding: 0 10px;
+  }
+}

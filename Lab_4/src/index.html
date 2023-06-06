@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head itemscope itemtype="http://schema.org/WebSite">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Project</title>
+    <title>Teachinder</title>
+
+    <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="./scss/style.css" />
+    <link rel="stylesheet" href="./scss/main.css" />
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" class="main">
+    <header class="header container">
+      <p class="header__title">Teachinder</p>
+      <div class="header__search-bar">
+        <form id="find-teacher">
+          <input
+            type="text"
+            placeholder="Name, note or age to search"
+            class="text-input"
+          />
+          <button class="btn small-btn">Search</button>
+        </form>
+      </div>
+    </header>
+    <nav class="navbar navbar-top container">
+      <div class="navbar__links">
+        <a class="navbar__element" href="#teachers">Teachers</a>
+        <a class="navbar__element" href="#statistics">Statistics</a>
+        <a class="navbar__element" href="#favorites">Favorites</a>
+        <a class="navbar__element" href="#about">About</a>
+      </div>
+      <button class="add-teacher__btn btn navbar__btn">Add Teacher</button>
+    </nav>
+    <section class="container" id="teachers">
+      <div class="separator">
+        <hr />
+      </div>
+      <h3 class="title">Top Teachers</h3>
+      <div class="teachers__filters-row">
+        <div class="fieldset inline-fieldset">
+          <label for="filter-age" class="label">Age</label>
+          <select id="filter-age" class="thin-input">
+          </select>
+        </div>
+        <div class="v-separator"></div>
+        <div class="fieldset inline-fieldset">
+          <label for="filter-region" class="label">Region</label>
+          <select id="filter-region" class="thin-input">
+          </select>
+        </div>
+        <div class="v-separator"></div>
+        <div class="fieldset inline-fieldset">
+          <label for="filter-sex" class="label">Sex</label>
+          <select id="filter-sex" class="thin-input">
+          </select> 
+        </div>
+        <div class="v-separator"></div>
+        <div class="fieldset inline-fieldset">
+          <input type="checkbox" id="filter-withPhoto" style="align-self: center" />
+          <label for="filter-withPhoto" class="label">Only with photo</label>
+        </div>
+        <div class="v-separator"></div>
+        <div class="fieldset inline-fieldset">
+          <input
+            type="checkbox"
+            id="filter-isFavorite"
+            style="align-self: center"
+          />
+          <label for="filter-isFavorite" class="label">Only favorites</label>
+        </div>
+      </div>
+      <div class="teachers-list"></div>
+    </section>
+    <section class="container" id="statistics">
+      <div class="separator">
+        <hr />
+      </div>
+      <h3 class="title">Statistics</h3>
+      <table class="stats-table">
+        <thead>
+          <tr>
+            <th id="stats-table__name-sort" class="stats-table__header">
+              Name <span class="stats-table__header-icon">↓</span>
+            </th>
+            <th id="stats-table__course-sort" class="stats-table__header">
+              Course <span class="stats-table__header-icon">↓</span>
+            </th>
+            <th id="stats-table__age-sort" class="stats-table__header">
+              Age <span class="stats-table__header-icon">↓</span>
+            </th>
+            <th id="stats-table__gender-sort" class="stats-table__header">
+              Gender <span class="stats-table__header-icon">↓</span>
+            </th>
+            <th id="stats-table__nationality-sort" class="stats-table__header">
+              Nationality <span class="stats-table__header-icon">↓</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+      </table>
+      <div class="paging">
+        <span class="paging__button">1</span>
+        <span class="paging__button">2</span>
+        <span class="paging__button">3</span>
+        <span>...</span>
+        <span class="paging__button">Last</span>
+      </div>
+    </section>
+    <section class="container" id="favorites">
+      <div class="separator">
+        <hr />
+      </div>
+      <h3 class="title">Favorites</h3>
+      <div class="teachers-list favorite-teachers">
+      </div>
+    </section>
+    <footer class="footer container" id="about">
+      <div class="separator">
+        <hr />
+      </div>
+      <p class="footer__text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque
+        facere, hic impedit itaque molestiae sit tempore? Ea in mollitia natus
+        rerum voluptates. Ea ex excepturi facere tempora. Aliquid asperiores hic
+        impedit iusto natus quaeret ratione sit? Culpa iusto optio voluptas
+        voluptate. Enim eveniet fugit iure maiores molestiae, praesentium quia.
+      </p>
+      <p class="footer__text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+        eligendi illum in inventore ipsum odio officiis omnis quisquam sed
+        tempora?
+      </p>
+      <p class="footer__text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque esse
+        expedita id iusto mollitia, odit sint ullam veritatis vero?
+      </p>
+      <nav class="navbar">
+        <div class="navbar__links">
+          <a class="navbar__element" href="#teachers">Teachers</a>
+          <a class="navbar__element" href="#statistics">Statistics</a>
+          <a class="navbar__element" href="#favorites">Favorites</a>
+          <a class="navbar__element" href="#about">About</a>
+        </div>
+        <button class="add-teacher__btn btn navbar__btn">Add Teacher</button>
+      </nav>
+    </footer>
+
+    <div id="teacher-modal" class="modal modal_close">
+      <div class="modal__background"></div>
+      <div class="modal__container">
+        <div class="modal__header">
+          <p>Teacher Card</p>
+          <span id="close-teacher-modal">&#x2715;</span>
+        </div>
+        <div class="modal__content">
+          <div class="teacher-card">
+            <div class="teacher-card__info">
+              <img
+                class="teacher-card__avatar"
+                src="./images/teacher.jpeg"
+                alt="Teacher photo"
+              />
+              <div class="teacher-card__contact">
+                <div class="teacher-card__name-wrapper">
+                  <h2 class="teacher-card__name">Joseph Joestar </h2>
+                  <span class="teacher-card__favorite"></span>
+                </div>
+                <p class="teacher-card__speciality">Computer Science</p>
+                <p class="teacher-card__location teacher-card__additional-info">Kyiv, Ukraine</p>
+                <p class="teacher-card__person-info teacher-card__additional-info">35, Male</p>
+                <p class="teacher-card__email teacher-card__additional-info">
+                  JosephJoestar@anime.com
+                </p>
+                <p class="teacher-card__phone teacher-card__additional-info">+380736661478</p>
+              </div>
+            </div>
+            <div class="teacher-card__describe"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="add-teacher-modal" class="modal modal_close">
+      <div class="modal__background"></div>
+      <div class="modal__container">
+        <div class="modal__header">
+          <p>Add Teacher</p>
+          <span id="close-add-teacher-modal">&#x2715;</span>
+        </div>
+        <div class="modal__content">
+          <div class="teacher-form__container">
+            <form id="add-teacher-form" class="teacher-form" action="">
+              <div class="form-field">
+                <label>Full Name</label>
+                <input
+                  class="input"
+                  type="text"
+                  name="fullName"
+                  required
+                  autofocus
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="course">Speciality</label>
+                <select class="select" name="course" id="course">
+                  <option value="Mathematics">Mathematics</option>
+                  <option value="Computer Science">Computer Science</option>
+                  <option value="Physics">Physics</option>
+                  <option value="English">English</option>
+                  <option value="Dancing">Dancing</option>
+                  <option value="Chess">Chess</option>
+                  <option value="Biology">Biology</option>
+                  <option value="Chemistry">Chemistry</option>
+                </select>
+              </div>
+
+              <div class="form-field__group">
+                <div class="form-field">
+                  <label>Country </label>
+                  <input class="input" type="text" name="country" required />
+                </div>
+                <div class="form-field">
+                  <label>City </label>
+                  <input class="input" type="text" name="city" required />
+                </div>
+              </div>
+
+              <div class="form-field__group">
+                <div class="form-field">
+                  <label>Email </label>
+                  <input
+                    class="input"
+                    type="email"
+                    name="email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label>Phone </label>
+                  <input
+                    class="input"
+                    type="tel"
+                    name="phone"
+                    pattern="[0-9]{10}"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label>Date of birth </label>
+                <input class="input" type="date" name="birthDate" required />
+              </div>
+
+              <div class="form-field__row">
+                <label>Gender</label>
+                <div class="flex">
+                  <label for="gender">Male</label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="male"
+                    checked="checked"
+                  />
+                  <label for="gender">Female</label>
+                  <input type="radio" name="gender" value="female" />
+                </div>
+              </div>
+
+              <div class="form-field__row">
+                <label for="backgroundColor">Background color </label>
+                <input class="input" type="color" name="backgroundColor" />
+              </div>
+
+              <div class="form-field">
+                <label>Notes (optional)</label>
+                <textarea
+                  class="textarea"
+                  name="note"
+                  rows="4"
+                  cols="20"
+                ></textarea>
+              </div>
+              <button class="btn form-submit" type="submit" >Add</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../build/app.js"></script>
+  </body>
+</html>

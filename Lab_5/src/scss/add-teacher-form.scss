@@ -1,0 +1,11 @@
+.teacher-form {
+  border-radius: 5px;
+
+  &__container {
+    width: 560px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: white;
+  }
+}

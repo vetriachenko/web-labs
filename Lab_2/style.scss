@@ -1,0 +1,329 @@
+$primary-color: #F45D4A;
+$secondary-color: #FA9382;
+$hover: #CB4632;
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+header,
+main,
+footer {
+    width: 1200px;
+    margin: auto;
+    padding: 0 100px;
+}
+
+header {
+    padding-top: 40px;
+
+    #logo {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 36px;
+        color: white;
+        text-shadow: -1px -1px $secondary-color, 2px 1px black;
+        letter-spacing: 1px;
+        margin: 0;
+
+        &:hover {
+            color: #F1ECF0;
+            text-shadow: -2px -1px $secondary-color, 3px 1px black;
+        }
+    }
+
+    #search-bar {
+        width: 220px;
+        height: 42px;
+        border: #767676 1px solid;
+        padding: 10px;
+        transition: width 0.5s ease;
+        margin: 0 15px;
+
+        &:hover {
+            width: 400px;
+        }
+    }
+
+    .search {
+        display: flex;
+    }
+
+    #search-button {
+        height: 42px;
+        width: 94px;
+
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+}
+
+nav {
+    display: inline;
+}
+
+.btn {
+    border: 1px $primary-color solid;
+    color: $primary-color;
+    background: white;
+    justify-content: center;
+    font-weight: bolder;
+
+    &:hover {
+        background: $primary-color;
+        color: white;
+    }
+}
+
+.add-teacher-btn {
+    width: 170px;
+    height: 53px;
+    font-size: larger;
+}
+
+h3 {
+    color: $primary-color;
+    margin: 0 40px 0 0;
+
+    &:hover {
+        color: $hover;
+    }
+}
+
+hr {
+    width: 50%;
+    border-top: 1px solid black;
+}
+
+.top-teachers {
+    border-collapse: collapse;
+
+    td {
+        padding: 10px 15px;
+        border-left: #9A9A9A 2px dotted;
+        color: #9A9A9A;
+
+        select {
+            height: 36px;
+            border: #767676 1px solid;
+            padding-left: 5px;
+            font-size: 15px;
+        }
+
+        label:hover {
+            color: black;
+        }
+    }
+
+    td:first-child {
+        border: none;
+    }
+}
+
+.teacher {
+    width: 150px;
+    text-align: center;
+    margin: 10px 25px;
+
+    h2 {
+        margin: 15px auto;
+    }
+
+    p {
+        margin: 5px;
+    }
+
+    p.speciality {
+        color: #767676;
+        font-size: 14px;
+    }
+
+    p.country {
+        font-size: 11px;
+    }
+}
+
+.teachers {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 0;
+}
+
+.teacher-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid $secondary-color;
+    overflow: hidden;
+
+    &:hover {
+        border: 4px solid $hover;
+
+        img {
+            transform: scale(1.5);
+        }
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.statistics {
+    border-collapse: collapse;
+    width: 100%;
+
+    th {
+        border-bottom: 1px black solid;
+        font-weight: normal;
+        padding: 10px 15px;
+
+        &:first-child {
+            text-align: left;
+        }
+
+        &:hover {
+            border-bottom: 4px black solid;
+        }
+    }
+
+    tr:nth-child(even) {
+        background: #FAF5FB;
+    }
+
+    td {
+        text-align: center;
+        padding: 3px 15px;
+
+        &:first-child {
+            text-align: left;
+        }
+    }
+}
+
+.pagination {
+    padding: 20px 0px;
+
+    a {
+        margin: 0px 10px;
+        text-decoration: none;
+
+        &.active,
+        &.rest {
+            color: black;
+        }
+
+        &:hover {
+            color: #165B6A;
+        }
+    }
+}
+
+.modal {
+    //position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px #767676;
+    border-radius: 5px;
+    border: none;
+    width: auto;
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        color: white;
+        background-color: #464648;
+        padding: 8px 20px;
+    }
+
+    .teacher-info {
+        width: 950px;
+        height: 558px;
+
+        .toggle-map {
+            text-decoration: dotted;
+        }
+    }
+
+    .add-teacher {
+        width: 560px;
+        height: 892px;
+
+        .form-element {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-bottom: 20px;
+
+            label {
+                padding-bottom: 10px;
+            }
+        }
+
+        .form-element-row {
+            display: flex;
+            align-items: center;
+            padding-bottom: 20px;
+
+            &>label {
+                padding-right: 40px;
+            }
+        }
+
+        .form-element-group {
+            display: flex;
+            gap: 24px;
+          
+            div {
+              flex: 1;
+            }
+          }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: white;
+            border: 1px grey solid;
+            border-radius: 2px;
+
+            &[type='color']{
+              width: 50px;
+            }          
+          }
+          select {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: white;
+            border: 1px grey solid;
+            border-radius: 2px;
+          }
+          
+          textarea {
+            width: 100%;
+            height: 125px;
+          }
+          
+          input[type='submit'] {
+            margin-top: 20px; 
+            height: 40px;           
+            width: 100%;
+          }
+          input[type='radio'] {
+            display: flex;
+            justify-content:flex-start;
+            padding-bottom: 20px;
+          }
+        
+    }
+}
+
+
+footer {
+    padding-bottom: 40px;
+}

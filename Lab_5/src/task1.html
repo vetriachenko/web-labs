@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ua">
+    <div id="header" >
+        <title>task1</title>
+        <h2>Форма для додавання викладача</h2>
+    </div>
+
+    <div id="main">
+        <form action="">
+            <label>Повне ім'я: </label><input type="text" name="full_name" required autofocus /><br>
+            <label>Стать:
+                <input type="radio" name="gender" value="male" checked="checked" />Чоловіча
+                <input type="radio" name="gender" value="female" />Жіноча
+            </label><br>
+            <label>Дата народження: </label><input type="date" name="b_date" required /><br>
+            <label>Email: </label><input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required /><br>
+            <label>Телефон: </label><input type="tel" name="tel" pattern="[0-9]{10}" required /><br>
+            <label>Колір: </label><input type="color" name="back_color" /><br>
+            <label>Країна: </label><input type="text" name="country" required /><br>
+            <label>Місто: </label><input type="text" name="city" required /><br>
+            <label>Коментар:</label><br>
+            <textarea name="comment" rows="4" cols="20"></textarea><br>
+            <input type="submit" value="Зареєструвати" /><br>
+        </form>
+    </div>
+</html>

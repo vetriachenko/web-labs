@@ -1,0 +1,72 @@
+.teacher-card {
+  max-width: 950px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: white;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #464547;
+    padding: 20px;
+  }
+
+  &__avatar {
+    width: 320px;
+    height: 320px;
+  }
+
+  &__info {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__contact {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__name {
+    font-size: 28px;
+  }
+
+  &__name-wrapper {
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__speciality {
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 30px;
+  }
+
+  &__additional-info {
+    font-size: 14px;
+    padding-bottom: 20px;
+  }
+
+  &__describe {
+    padding-top: 35px;
+    text-align: left;
+  }
+  &__map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  }
+}
+
+#teacher-card__map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
