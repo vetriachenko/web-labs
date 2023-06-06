@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Додавання викладача</legend>
+                <label for="lastname">
+                    Прізвище <input type="text" id="lastname" placeholder="Парасюк" required> 
+                </label><br>
+    
+                <label for="firstname">
+                    Ім'я <input type="text" id="firstname" placeholder="Микола" required> 
+                </label><br>
+    
+                <label for="patronymic">
+                    Ім'я по батькові <input type="text" id="patronymic" placeholder="Олександрович">
+                </label>                
+
+            <section>
+                <p style="margin-bottom:0;">Вкажіть Вашу стать</p>
+                <label for="male">
+                    <input type="radio" name="gender" value="male" id="male" required> Чоловіча
+                </label><br>
+                
+                <label for="female">
+                    <input type="radio" name="gender" value="female" id="female"> Жіноча
+                </label><br>
+                
+                <label for="other">
+                    <input type="radio" name="gender" value="other" id="other"> Інше
+                </label><br>
+            </section><br>
+
+            <label for="birthdate">
+                Дата народження <input type="date" id="birthdate" required>
+            </label><br><br>
+
+            <label for="email">
+                Email <input type="email" id="email" placeholder="mykolap@gmail.com">
+            </label><br>
+
+            <label for="phone">
+                Телефон <input type="tel" id="phone" placeholder="+380503441592" pattern="\+\d{12}" required>
+            </label><br><br>
+
+            <label for="preferred-bg-color">
+                Бажаний колір фону <input type="color" id="preferred-bg-color">
+            </label><br><br>
+
+            <label for="country">
+                Країна <input type="text" id="country" placeholder="Україна">
+            </label><br>
+
+            <label for="city">
+                Місто <input type="text" id="city" placeholder="Київ">
+            </label><br><br>
+
+            <label for="comment">Коментар</label><br>
+            <textarea id="comment" placeholder="Не більше 200 символів." maxlength="200" cols="35"
+                rows="7"></textarea><br><br>
+
+            <input type="reset" value="Скинути"><input type="submit" value="Надіслати">
+        </fieldset>
+    </form>
+</body>
+
+</html>
